@@ -6,19 +6,14 @@ var url = "https://6602f3169d7276a75554ac7b.mockapi.io/apiIAW/Songs";
 var listOfUsers = [];
 
 function createHTML(listOfUsers){
-    var html = "<html><head><title>Users</title></head><body>";
-    html += "<h1>Users</h1>";
-    html += "<table border='1'>";
-    html += "<tr><th>ID</th><th>Name</th><th>Avatar</th></tr>";
-    for(var i = 0; i < listOfUsers.length; i++){
-        html += "<tr>";
-        html += "<td>"+listOfUsers[i].id+"</td>";
-        html += "<td>"+listOfUsers[i].name+"</td>";
-        html += "<td><img src='"+listOfUsers[i].avatar+"'></td>";
-        html += "</tr>";
+    var html = "<!Doctype html><html><head><meta charset=\"utf-8\"><title>Express</title><link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\"></head><body><div class=\"container-sm\"><h1>DOM</h1><div class=\"list align-items-center\" id=\"list\">"
+    for (var i = 0; i < listOfUsers.length; i++){
+        html += "<div class=\"list-group-item list-group-item-action d-flex align-items-center\"><img src=\"" + listOfUsers[i].image + "\" style=\"width:100px; height:100px; margin-right: 10px; border-radius: 50%\">";
+        {
+            html += "<div class=\"w-100 justify-content-between inline-block\"><h1 style=\"marginBottom: 0\">" + listOfUsers[i].name + "</h1><br>"+ listOfUsers[i].author +"<br>"+ listOfUsers[i].studio +"<br>"+ listOfUsers[i].year +"</div></div>";
+        }
     }
-    html += "</table>";
-    html += "</body></html>";
+    html += "</div></div></body></html>";
     return html;
 }
 
